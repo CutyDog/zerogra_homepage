@@ -1,0 +1,1172 @@
+@charset "UTF-8";
+/*
+Theme Name: wpzerogra
+*/
+
+/* CSS Document */
+
+/* -------PC表示------- */
+@media (min-width: 1201px) {
+   html {
+	   font-size: 20px;
+    }
+}
+
+/* -------タブレット表示------- */
+@media (min-width: 768px) and (max-width: 1200px) {
+	html {
+		font-size: 15px;
+	 }
+ }
+
+/* -------スマホ------- */
+@media (max-width: 767px) {
+	html{
+		font-size: 10px;
+	}
+}
+
+
+body {
+	font-family: "Noto Sans CJK JP", "NotoSansCJKJP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "sans-serif";
+}
+a{
+	text-decoration: none;
+}
+img{
+	max-width: 100%;
+}
+
+body {
+	background-color:  #FDFCF6;
+}
+/* -------HEADER------- */
+
+header {
+	width: 100%;
+	background-color: #FDFCF6;
+	position: fixed;
+	z-index: 10;
+}
+.page-header {
+	display: flex;
+	width: 90%;
+	height: 100px;
+	justify-content: space-around;
+	background-color: #FDFCF6;
+	margin: 0 auto;
+	align-items: center;
+}
+h1 {
+	width: 250px;
+	margin-top: 11px;
+}
+.logo {
+	width: 100%;
+}
+nav {
+	width: 75%;
+}
+.main-nav {
+	display: flex;
+	font-size: 20px;
+	/* margin: 42px 0px 0px 0px; */
+	list-style: none;
+	width: 100%;
+	align-items: center;
+}
+.main-nav li {
+	width: 20%;
+	text-align: center;
+	position: relative;
+	transition: all 0.3s;
+	/* display: inline-block; */
+}
+.main-nav a {
+	color: #000;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+.main-nav li:hover {
+	color: #fff;
+	background-color: #7ec4ae;
+	border-radius: 4px;
+}
+
+
+/* -------ハンバーガーメニュー開始------- */
+
+
+/* ボタン部分の実装 */
+.menu-btn {
+	position: fixed;
+	top: 20px;
+	right: 10px;
+	display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background-color: #7ec4ae;
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    position: absolute;
+}
+.menu-btn span:before {
+    bottom: 8px;
+}
+.menu-btn span:after {
+    top: 8px;
+}
+
+
+/* ×ボタンの実装 */
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+
+/* チェックボタンの非表示 */
+#menu-btn-check {
+	display: none;
+}
+
+
+/* メニューの実装 */
+.menu-content {
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;/*leftの値を変更してメニューを画面外へ*/
+    z-index: 80;
+    background-color: #7ec4ae;
+    transition: all 0.5s;/*アニメーション設定*/
+}
+.menu-content ul {
+    padding: 100px 10px 0;
+}
+.menu-content ul li {
+    border-bottom: solid 1px #ffffff;
+    list-style: none;
+}
+.menu-content ul li a {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    box-sizing: border-box;
+    color:#ffffff;
+    text-decoration: none;
+    padding: 9px 15px 10px 0;
+    position: relative;
+}
+.menu-content ul li a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 2px #ffffff;
+    border-right: solid 2px #ffffff;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 11px;
+    top: 16px;
+}
+#menu-btn-check:checked ~ .menu-content {
+    left: 50%;/*メニューを画面内へ*/
+}
+
+/* -------スマホ表示------- */
+@media screen and (min-width: 1201px) {
+	.menu-smafo {
+		display: none;
+	}
+}
+/* -------PC表示------- */
+@media screen and (max-width: 1200px) {
+	.menu-pc {
+		display: none;
+	}
+}
+/* -------ハンバーガーメニュー終了------- */
+
+
+
+
+
+
+
+/* -------home-------  */
+/* -------PC表示------- */
+#home {
+	background-image: url(./images/nasa.jpg);/*宇宙飛行士の背景画像*/
+	width: 100%;
+	height: 750px;
+	background-position: 10% center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+/* -------タブレット表示------- */
+@media (min-width: 768px) and (max-width: 1200px) {
+	#home {
+		height: 650px;
+	}
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	#home {
+		height: 400px;
+		background-position: top;
+		background-size: auto 400px;
+
+	}
+}
+/* -------PC表示------- */
+.nasa {
+	position: absolute;
+	color: #FFFFFF;
+	text-align: center;
+	top: 35%;
+	left: 5%;
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	.nasa {
+		top: 36%;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+}
+.nasa h2 {
+	font-size: 2.5rem;
+	letter-spacing: 1rem;
+	text-shadow: 5px 4px 3px #807f7f;
+}
+.nasa p {
+	font-size: 1.8rem;
+	font-style: italic;
+	padding-top: 25px;
+	letter-spacing: 0.1rem;
+	text-shadow: 3px 3px 3px #807f7f;
+}
+.nasa h3 {
+	font-size: 2rem;
+	letter-spacing: 0.5rem;
+	text-shadow: 4px 3px 3px #807f7f;
+}
+
+
+
+
+
+
+
+/* --------corporate------- */
+#corporate {
+	width: 100%;
+	height: 800px;
+	background-color: #FDFCF6	
+}
+#corporate {
+	background-image: url(./images/maru.jpg);/*楕円の背景画像*/
+	width: 100%;
+	height: 800px;
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+/* -------PC表示------- */
+.one {
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 200px;
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	.one {
+		padding-top: 150px
+	}
+}
+.one h2 {
+	font-size: 2rem;
+	padding-bottom: 50px;
+}
+.line {
+	border-bottom: solid 2px;/*事業理念〜お問い合わせの下線*/
+}
+.one p {
+	font-size: 1.5rem;
+}
+/* -------PC表示------- */
+.twothree {
+/* 事業理念と行動指針(5C)を横並び */
+	display: flex;   
+	width: 90%;
+	margin: 0 auto;
+	align-items: stretch;
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	.twothree {
+		display: block;
+	}
+}
+/* -------PC表示------- */
+.two {
+	width: 50%;
+	text-align: center;
+	padding-top: 100px;
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	.two {
+		width: 100%;
+	}
+}
+
+
+
+.two h2{
+	font-size: 2rem;
+	padding-bottom: 50px;
+}
+.two p {
+	font-size: 1.5rem;
+}
+/* -------PC表示------- */
+.three {
+	width: 50%;
+	text-align: center;
+	padding-top: 100px;
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	.three {
+		width: 100%;
+	}
+}
+.three h2{
+	font-size: 2rem;
+	padding-bottom: 50px;
+}
+.fivebox {
+/* fivecとfiveを横並びにしている */
+	display: flex;
+	justify-content: space-around;
+	width: 90%;
+	margin: 0 auto;
+
+}
+.fivec {
+	list-style: none;	
+	text-align: left;
+	font-size: 1.1em;
+	padding: 0 0 0 10px;
+} 
+.five {
+	list-style: none;
+	text-align: left;
+	font-size: 1.1em;
+}
+
+.tallc {
+	font-style: italic;
+	letter-spacing: 0.1em;
+}
+
+
+
+
+
+
+
+
+/* -------business------- */
+/* -------PC表示------- */
+#business h2 {
+	width: 100%;
+	font-size: 2rem;
+	text-align: center;
+	padding-top: 130px;
+	padding-bottom: 100px;
+	background-color: #FDFCF6
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	#business h2 {
+		padding-bottom: 50px;
+	}
+}
+/* -------PC表示------- */
+.container {
+	display: flex;/*事業内容を2×2に設置*/
+	flex-wrap: wrap;
+	width: 100%;
+	align-items: stretch;
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	.container {
+		display: block;
+	}
+}
+/* -------PC表示------- */
+.container-itema {
+	width: 50%;
+	padding: 20px 0;
+	background-color: #fff;
+	text-align: center;
+	border-width: 10px 5px 5px 10px;
+	border-style: solid;
+	border-color: rgba(0,141,102,0.5);
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	.container-itema {
+		width: 100%;
+		border-width: 10px 10px 5px 10px;
+	}
+}
+.itema {
+	width: 90%;
+	margin: 0 auto;
+}
+.itema i {
+	width: 60px;/*採用コンサルティング事業*/
+	height: 60px;
+	line-height: 60px;
+	font-size: 180%;
+	color: #fff;
+	border-radius: 50%;
+	background-color: #327ec2;
+}
+.itema h3 {
+	font-size: 1rem;
+	padding-top: 10px;
+	padding-bottom: 30px;
+}
+/* -------PC表示------- */
+.itema ul {
+	list-style-type: none;
+	text-align: left;
+	padding: 0 0 0 20%;
+	font-size: 0.9rem;
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	.itema ul {
+		text-align: center;
+		padding: 0 0 0 0;
+	}
+}
+/* -------PC表示------- */
+.itema-kaigyo {
+	display:  none;
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	.itema-kaigyo {
+		display: block;
+	}
+}
+/* -------PC表示------- */
+.container-itemb {
+	width: 50%;
+	padding: 20px 0;
+	background-color: #fff;
+	text-align: center;
+	border-width: 10px 10px 5px 5px;
+	border-style: solid;
+	border-color: rgba(0,141,102,0.5);
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	.container-itemb {
+		width: 100%;
+		border-width: 5px 10px 5px 10px;
+	}
+}
+.itemb {
+	width: 90%;
+	margin: 0 auto;
+}
+.itemb i {
+	width: 60px;/*求人広告代理店業*/
+	height: 60px;
+	line-height: 60px;
+	font-size: 180%;
+	color: #fff;
+	border-radius: 50%;
+	background-color: #327ec2;
+}
+.itemb h3 {
+	font-size: 1rem;
+	padding-top: 10px;
+	padding-bottom: 30px;
+}
+/* -------PC表示------- */
+.itemb ul {
+	list-style-type: none;
+	text-align: left;
+	padding: 0 0 0 20%;
+	font-size: 0.9rem;
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	.itemb ul {
+		text-align: center;
+		padding: 0 0 0 0;
+	}
+}
+/* -------PC表示------- */
+.container-itemc {
+	width: 50%;
+	padding: 20px 0;
+	background-color: #fff;
+	text-align: center;
+	border-width: 5px 5px 10px 10px;
+	border-style: solid;
+	border-color: rgba(0,141,102,0.5);
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	.container-itemc {
+		width: 100%;
+		border-width: 5px 10px 5px 10px;
+	}
+}
+.itemc {
+	width: 90%;
+	margin: 0 auto;
+}
+.itemc i {
+	width: 60px;/*SaaSサービス代理店業*/
+	height: 60px;
+	line-height: 60px;
+	font-size: 180%;
+	color: #fff;
+	border-radius: 50%;
+	background-color: #327ec2;
+}
+.itemc h3 {
+	font-size: 1rem;
+	padding-top: 10px;
+	padding-bottom: 30px;
+}
+/* -------PC表示------- */
+.itemc ul {
+	list-style-type: none;
+	text-align: left;
+	padding: 0 0 0 20%;
+	font-size: 0.9rem;
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	.itemc ul {
+		text-align: center;
+		padding: 0 0 0 0;
+	}
+}
+/* -------PC表示------- */
+.container-itemd {
+	width: 50%;
+	padding: 20px 0;
+	background-color: #fff;
+	text-align: center;
+	border-width: 5px 10px 10px 5px;
+	border-style: solid;
+	border-color: rgba(0,141,102,0.5);
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	.container-itemd {
+		width: 100%;
+		border-width: 5px 10px 10px 10px;
+	}
+}
+.itemd {
+	width: 90%;
+	margin: 0 auto;
+}
+.itemd i {
+	width: 60px;/*運用型求人広告コンサルティング*/
+	height: 60px;
+	line-height: 60px;
+	font-size: 180%;
+	color: #fff;
+	border-radius: 50%;
+	background-color: #327ec2;
+}
+.itemd h3 {
+	font-size: 1rem;
+	padding-top: 10px;
+	padding-bottom: 30px;
+}
+/* -------PC表示------- */
+.itemd ul {
+	list-style-type: none;
+	text-align: left;
+	padding: 0 0 0 20%;
+	font-size: 0.9rem;
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	.itemd ul {
+		text-align: center;
+		padding: 0 0 0 0;
+	}
+}
+
+
+
+
+
+
+
+
+/* -------メンバー紹介------- */
+/* -------PC表示------- */
+#members h2 {
+	width: 100%;
+	font-size: 2rem;
+	text-align: center;
+	padding-top: 200px;
+	padding-bottom: 100px;
+	background-color: #FDFCF6;
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	#members h2 {
+	   padding-top: 150px;
+	   padding-bottom: 50px;
+	}
+}
+/* -------PC表示------- */
+.membersbox {
+	display: flex;/*メンバー紹介を2×1に設置*/
+	width: 90%;
+	margin: 0 auto;
+	align-items: stretch;
+	justify-content: space-around;
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	.membersbox {
+		display: block;
+	}
+}
+/* -------PC表示------- */
+.konno {
+	width: 40%;
+	padding: 30px 0;
+	background-color: #fff;
+	text-align: center;
+	box-shadow: 5px 5px 5px rgba(0,0,0,.2);
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	.konno {
+		width: 100%;
+		margin: 0 0 20px 0;
+	}
+}
+.konnophoto {
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+}
+.konno h3 {
+	font-size: 1.5rem;
+	padding-top: 10px;
+}
+.membersgyokan {
+	padding-top: 20px;
+	padding-bottom: 10px;;
+}
+.konno p {
+	width: 70%;
+	margin: 0 auto;
+	text-align: justify;
+	font-size: 0.8rem;
+}
+/* -------PC表示------- */
+.nakamoto {
+	width: 40%;
+	padding: 30px 0;
+	background-color: #fff;
+	text-align: center;
+	box-shadow: 5px 5px 5px rgba(0,0,0,.2);
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	.nakamoto {
+		width: 100%;
+		margin: 0 0 20px 0;
+	}
+}
+.nakamotophoto {
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+}
+.nakamoto h3 {
+	font-size: 1.5rem;
+	padding-top: 10px;
+}
+.membersgyokan {
+	padding-top: 20px;
+	padding-bottom: 10px;;
+}
+.nakamoto p {
+	width: 70%;
+	margin: 0 auto;
+	text-align: justify;
+	font-size: 0.8rem;
+}
+
+
+
+
+
+
+
+/* -------採用情報------- */
+/* -------PC表示------- */
+#recruit h2 {
+	width: 100%;
+	font-size: 2rem;
+	text-align: center;
+	padding-top: 200px;
+	padding-bottom: 100px;
+	background-color: #FDFCF6;
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	#recruit h2 {
+		padding-top: 150px;
+	    padding-bottom: 50px;
+	}
+}
+/* -------PC表示------- */
+.saiyou {
+	background-image: url(./images/member1.jpg);/*メンバーの背景画像*/
+	width: 100%;
+	height: 800px;
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	.saiyou {
+		height: 300px;
+		background-position: top;
+		background-size: auto 300px;
+	}
+}
+/* -------PC表示------- */
+.saiyoumidashi {
+	color: #fff;
+	font-size: 1.5rem;
+	text-align: center;
+	padding-top: 300px;
+	padding-bottom: 100px;
+	font-family: "遊明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3";
+	letter-spacing: 0.5em;
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	.saiyoumidashi {
+		padding: 140px 0 70px 0;
+	}
+}
+/* -------PC表示------- */
+.saiyoumidashi-kaigyou {
+	display:  none;
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	.saiyoumidashi-kaigyou {
+		display: block;
+	}
+}
+/* -------PC表示------- */
+.saiyoubox{
+	display: flex;/*採用情報をタイル型に設置*/
+	width: 90%;
+	margin: 0 auto;
+	justify-content: space-around;
+	align-items: stretch;
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	.saiyoubox {
+		display: grid;
+		grid-template-columns: 80%;
+	}
+}
+/* -------PC表示------- */
+.saiyougyoumu  {
+	width: 45%;
+	padding: 55px 0;
+	background-color: #fff;
+	text-align: center;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px rgba(0,0,0,.2);
+	transition: transform 0.5s ease 0s;
+}
+.saiyougyoumu:hover {
+	transform:translate(0, -10%) ;
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	.saiyougyoumu {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+}
+.gyoumuitaku {
+	width: 100%;
+	text-align: center;
+	color:  #7ec4ae;
+	font-size: 1.3rem;
+	padding-bottom: 5px;
+	letter-spacing: 0.3em;
+}
+/* -------PC表示------- */
+.saiyouintarn {
+	width: 45%;
+	padding: 55px 0;
+	background-color: #fff;
+	text-align: center;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px rgba(0,0,0,.2);
+	transition: transform 0.5s ease 0s;
+}
+.saiyouintarn:hover {
+	transform:translate(0, -10%) ;
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	.saiyouintarn {
+		width: 100%;
+	}
+}
+.intarn {
+	width: 100%;
+	text-align: center;
+	color:  #7ec4ae;
+	font-size: 1.3rem;
+	padding-bottom: 5px;
+	letter-spacing: 0.3em;
+}
+.saiyougyoumu p{
+	color: #545353;
+}
+
+.saiyougyoumu-one {
+	text-align: center;
+	font-size: 1.1rem;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+.saiyougyoumu-two {
+	font-weight: bold;
+}
+.saiyougyoumu-three {
+	font-weight: bold;
+	padding-top: 10px;
+}
+.saiyougyoumu-four {
+	font-weight: bold;
+	padding-top: 10px;
+}
+.intarn-one {
+	text-align: center;
+	font-size: 1.1rem;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+.intarn-two {
+	font-weight: bold;
+}
+.intarn-three {
+	font-weight: bold;
+	padding-top: 10px;
+}
+.intarn-four {
+	font-weight: bold;
+	padding-top: 10px;
+}
+.saiyouintarn p{
+	color: #545353;
+}
+
+
+
+
+
+
+
+/* -------会社情報------- */
+/* -------PC表示------- */
+#company h2 {
+	width: 100%;
+	font-size: 2rem;
+	text-align: center;
+	padding-top: 200px;
+	padding-bottom: 100px;
+	background-color: #FDFCF6;
+}
+/* -------スマホ表示------- */
+@media (max-width: 767px) {
+	#company h2 {
+		padding-top: 750px;
+		padding-bottom: 50px;
+	}
+}
+/* -------PC表示------- */
+.companybox {
+	display: flex;
+	width: 90%;
+	margin: 0 auto;
+	background-color: #d4d4d4;
+	justify-content: space-around;
+	align-items: stretch;
+}
+/* --------スマホ表示-------- */
+@media (max-width: 767px) {
+	.companybox {
+		display: block;
+	}
+}
+/* -------PC表示------- */
+.companybox-kaisya {
+	width: 50%;
+	padding: 20px 0;
+	font-size: 1rem;
+	text-align: left;
+}
+/* --------スマホ表示-------- */
+@media (max-width: 767px) {
+	.companybox-kaisya {
+		width: 100%;
+	}
+}
+.kaisya {
+	width: 90%;
+	margin: 0 0 0 auto;
+}
+.kaisya tr {
+	height: 2em;
+}
+.up {
+	vertical-align: top; 
+}
+.box {
+	padding-left: 50px;
+}
+/* -------PC表示------- */
+.map {
+	width: 40%;
+	margin: 20px 0;
+	text-align: center;
+}
+/* --------スマホ表示-------- */
+@media (max-width: 767px) {
+	.map {
+		display: none;
+	}
+}
+
+
+
+
+/* -------お問い合わせ------- */
+#contact h2 {
+	width: 100%;
+	font-size: 2rem;
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-color: #FDFCF6;
+}
+.Form {
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 720px;
+}
+@media screen and (max-width: 480px) {
+  .Form {
+    margin-top: 40px;
+  }
+}
+.Form-Item {
+  border-top: 1px solid #ddd;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 480px) {
+  .Form-Item {
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    flex-wrap: wrap;
+  }
+}
+.Form-Item:nth-child(5) {
+  border-bottom: 1px solid #ddd;
+}
+.Form-Item-Label {
+  width: 100%;
+  max-width: 248px;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+  font-size: 18px;
+}
+@media screen and (max-width: 480px) {
+  .Form-Item-Label {
+    max-width: inherit;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+  }
+}
+.Form-Item-Label.isMsg {
+  margin-top: 8px;
+  margin-bottom: auto;
+}
+@media screen and (max-width: 480px) {
+  .Form-Item-Label.isMsg {
+    margin-top: 0;
+  }
+}
+.Form-Item-Label-Required {
+  border-radius: 6px;
+  margin-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 48px;
+  display: inline-block;
+  text-align: center;
+  background: #5bc8ac;
+  color: #fff;
+  font-size: 14px;
+}
+@media screen and (max-width: 480px) {
+  .Form-Item-Label-Required {
+    border-radius: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 32px;
+    font-size: 10px;
+  }
+}
+.Form-Item-Input {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-left: 40px;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 48px;
+  flex: 1;
+  width: 100%;
+  max-width: 410px;
+  background: #eaedf2;
+  font-size: 18px;
+}
+@media screen and (max-width: 480px) {
+  .Form-Item-Input {
+    margin-left: 0;
+    margin-top: 18px;
+    height: 40px;
+    flex: inherit;
+    font-size: 15px;
+  }
+}
+.Form-Item-Textarea {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-left: 40px;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 216px;
+  flex: 1;
+  width: 100%;
+  max-width: 410px;
+  background: #eaedf2;
+  font-size: 18px;
+}
+@media screen and (max-width: 480px) {
+  .Form-Item-Textarea {
+    margin-top: 18px;
+    margin-left: 0;
+    height: 200px;
+    flex: inherit;
+    font-size: 15px;
+  }
+}
+.Form-Btn { 
+  border-radius: 6px;
+  margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 280px;
+  display: block;
+  letter-spacing: 0.05em;
+  background: #5bc8ac;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+}
+@media screen and (max-width: 480px) {
+  .Form-Btn {
+    margin-top: 24px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: 160px;
+    font-size: 16px;
+  }
+}
+.end {
+	text-align: center;
+	background-color: #FDFCF6;
+}
+.logophoto{
+	width: 50px;
+	height: 50px;
+}
+.ends {
+	text-align: center;
+}
